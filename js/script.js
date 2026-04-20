@@ -65,19 +65,18 @@ function generateTitleLinks(customSelector = ''){
       }
     /* titleList.insertAdjacentHTML('beforeend', linkHTML); */
     titleList.innerHTML = html;  
+    const links = document.querySelectorAll('.titles a');
+
+  for(let link of links){
+  link.addEventListener('click', titleClickHandler);
+  }
 }
 
 
 generateTitleLinks()
 
 const optTagsListSelector = ('.tags.list');
-const links = document.querySelectorAll('.titles a');
-console.log('links', links);
 
-
-  for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-  }
 
   function generateTags(){
   /* [NEW] create a new variable allTags with an empty object */
